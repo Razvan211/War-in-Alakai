@@ -35,6 +35,11 @@ public class SelectUnit : MonoBehaviour
     {
 
     }
+    
+    public void ShiftClickSelect(GameObject coveredUnits)
+    {
+
+    }
 
     public void DeselectAll()
     {
