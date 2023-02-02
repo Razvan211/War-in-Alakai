@@ -33,6 +33,8 @@ public class SelectUnit : MonoBehaviour
     {
         DeselectAll();
         selectedUnits.Add(coveredUnits);
+        //Activates the selection circle
+        coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void DragSelect(GameObject coveredUnits)
@@ -43,16 +45,24 @@ public class SelectUnit : MonoBehaviour
     public void ShiftClickSelect(GameObject coveredUnits)
     {
         if (!selectedUnits.Contains(coveredUnits))
-        {
+        {//Activates the selection circle
+            coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
             selectedUnits.Add(coveredUnits);
+
         }else
-        {
+        {//Deactivates the selection circle
+            coveredUnits.transform.GetChild(0).gameObject.SetActive(false);
             selectedUnits.Remove(coveredUnits);
         }
     }
 
     public void DeselectAll()
     {
+        //Deactivates the selection circle for all of the units in the list
+        foreach(var unit in selectedUnits)
+        {
+            unit.transform.GetChild(0).gameObject.SetActive(false);
+        }
         selectedUnits.Clear();
     }
 
