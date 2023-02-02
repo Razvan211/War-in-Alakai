@@ -39,7 +39,11 @@ public class SelectUnit : MonoBehaviour
 
     public void DragSelect(GameObject coveredUnits)
     {
-
+        if (!selectedUnits.Contains(coveredUnits))
+        {
+            selectedUnits.Add(coveredUnits);
+            coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
     
     public void ShiftClickSelect(GameObject coveredUnits)
