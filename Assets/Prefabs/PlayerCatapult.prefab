@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5397249520463962259}
   - component: {fileID: 5480189290131263369}
   - component: {fileID: 1431925126}
+  - component: {fileID: 677671220}
   m_Layer: 7
   m_Name: PlayerCatapult
   m_TagString: Untagged
@@ -83,6 +84,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc55cfb258b1514eb7f4a781a2bdfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &677671220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672573784270523802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d513d194be0d68b44acff2a7b7eb77f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &8424579145405821638
 GameObject:
   m_ObjectHideFlags: 0

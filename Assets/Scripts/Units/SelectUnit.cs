@@ -35,6 +35,7 @@ public class SelectUnit : MonoBehaviour
         selectedUnits.Add(coveredUnits);
         //Activates the selection circle
         coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
+        coveredUnits.GetComponent<UnitMovement>().enabled = true;
     }
 
     public void DragSelect(GameObject coveredUnits)
@@ -43,6 +44,8 @@ public class SelectUnit : MonoBehaviour
         {
             selectedUnits.Add(coveredUnits);
             coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
+            coveredUnits.GetComponent<UnitMovement>().enabled = true;
+
         }
     }
     
@@ -50,11 +53,15 @@ public class SelectUnit : MonoBehaviour
     {
         if (!selectedUnits.Contains(coveredUnits))
         {//Activates the selection circle
+
             coveredUnits.transform.GetChild(0).gameObject.SetActive(true);
             selectedUnits.Add(coveredUnits);
+            coveredUnits.GetComponent<UnitMovement>().enabled = true;
 
-        }else
+        }
+        else
         {//Deactivates the selection circle
+            coveredUnits.GetComponent<UnitMovement>().enabled = false;
             coveredUnits.transform.GetChild(0).gameObject.SetActive(false);
             selectedUnits.Remove(coveredUnits);
         }
@@ -65,6 +72,7 @@ public class SelectUnit : MonoBehaviour
         //Deactivates the selection circle for all of the units in the list
         foreach(var unit in selectedUnits)
         {
+            unit.GetComponent<UnitMovement>().enabled = false;
             unit.transform.GetChild(0).gameObject.SetActive(false);
         }
         selectedUnits.Clear();
