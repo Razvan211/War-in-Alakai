@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public enum BuildingPlacement
 {
+    PLACEABLE,
+    PLACED
+};
+
+public class Building : MonoBehaviour
+{/*
     private BuildingsData _data;
     private Transform _position;
     private int _currHealth;
@@ -17,12 +23,28 @@ public class Building : MonoBehaviour
             Resources.Load($"Prefabs/Buildings/{_data.Type}")
         ) as GameObject;
         _position = g.transform;
+
+        // set building mode as "valid" placement
+        _position = BuildingPlacement.PLACEABLE;
     }
 
     public void SetPosition(Vector3 position)
     {
         _position.position = position;
     }
+
+    // ...
+    public void Place()
+    {
+        // set placement state
+        _place = BuildingPlacement.FIXED;
+        // remove "is trigger" flag from box collider to allow
+        // for collisions with units
+        _position.GetComponent<BoxCollider>().isTrigger = false;
+    }
+
+    // ...
+    public bool IsFixed { get => _placement == BuildingPlacement.FIXED; }
 
     public string Code { get => _data.Type; }
     public Transform Transform { get => _position; }
@@ -41,7 +63,7 @@ public class Building : MonoBehaviour
             }
             return -1;
         }
-    }
+    }*/
 }
     
 
