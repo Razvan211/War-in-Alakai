@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    //variables to store camera speed and zoom speed
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float zoomSpeed = 200f;
 
-    [SerializeField] private float minZoom = 3f;
-    [SerializeField] private float maxZoom = 12f;
+    //variables to store the zoom constraints
+    [SerializeField] private float minZoom = 8f;
+    [SerializeField] private float maxZoom = 20f;
+
+    //variables to store the movement constraints
+    [SerializeField] private float xMargin = 37f;
+    [SerializeField] private float zTopMargin = 40f;
+    [SerializeField] private float zBotMargin = -49f;
     
 
     private Vector3 dragStartPosition;
@@ -33,11 +40,6 @@ public class CameraMovement : MonoBehaviour
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
 
-        if (Input.GetMouseButtonDown(2))
-        {
-            dragStartPosition = Input.mousePosition;
-        }
-
         if (Input.GetMouseButton(2))
         {
             Vector3 dragCurrentPosition = Input.mousePosition;
@@ -45,8 +47,28 @@ public class CameraMovement : MonoBehaviour
             transform.position += difference * moveSpeed * Time.deltaTime;
             dragStartPosition = dragCurrentPosition;
         }
+            if(transform.position.x > xMargin )
+            {
+                transform.position = new Vector3(xMargin, transform.position.y, transform.position.z);
+            }
+            else if(transform.position.x < -xMargin)
+            {
+                transform.position = new Vector3(-xMargin, transform.position.y, transform.position.z);
+            }
+
+            if (transform.position.z > zTopMargin)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, zTopMargin);
+            }
+            else if (transform.position.z < zBotMargin)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, zBotMargin);
+            }
+        
     }
 
+
+    //handles zoom
     private void HandleZoom()
     {
         
@@ -54,6 +76,8 @@ public class CameraMovement : MonoBehaviour
 
         Vector3 zoomDirection = transform.forward * zoomAmount;
         transform.position += zoomDirection;
+
+        //checks how far from the zoom limit is the camera
         if (transform.position.y <= minZoom)
         {
             transform.position = new Vector3(transform.position.x, minZoom, transform.position.z);
