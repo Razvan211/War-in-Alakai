@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7549737478473719968}
   - component: {fileID: 5397249520463962259}
   - component: {fileID: 5480189290131263369}
-  - component: {fileID: 1431925126}
   - component: {fileID: 677671220}
+  - component: {fileID: 1875841883}
   m_Layer: 7
   m_Name: PlayerCatapult
   m_TagString: Untagged
@@ -72,18 +72,6 @@ NavMeshAgent:
   m_BaseOffset: 0.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1431925126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2672573784270523802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc55cfb258b1514eb7f4a781a2bdfb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &677671220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +87,19 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  unitPrefab: {fileID: 2672573784270523802}
+--- !u!114 &1875841883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672573784270523802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc55cfb258b1514eb7f4a781a2bdfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8424579145405821638
 GameObject:
   m_ObjectHideFlags: 0
