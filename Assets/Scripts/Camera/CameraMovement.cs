@@ -5,7 +5,10 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float zoomSpeed = 10f;
+    [SerializeField] private float zoomSpeed = 200f;
+
+    [SerializeField] private float minZoom = 3f;
+    [SerializeField] private float maxZoom = 12f;
     
 
     private Vector3 dragStartPosition;
@@ -46,10 +49,20 @@ public class CameraMovement : MonoBehaviour
 
     private void HandleZoom()
     {
-        float zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * Time.deltaTime;
+        
+        float zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * 100 * Time.deltaTime;
 
         Vector3 zoomDirection = transform.forward * zoomAmount;
-
         transform.position += zoomDirection;
+        if (transform.position.y <= minZoom)
+        {
+            transform.position = new Vector3(transform.position.x, minZoom, transform.position.z);
+        }
+        else if (transform.position.y >= maxZoom)
+        {
+            transform.position = new Vector3(transform.position.x, maxZoom, transform.position.z);
+            
+        }
+        
     }
 }
