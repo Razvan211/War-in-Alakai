@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnitClick : MonoBehaviour
 {
     private Camera Cam;
+    public GameObject pointToMove;
 
     public LayerMask selectable;
     public LayerMask ground;
@@ -46,6 +47,23 @@ public class UnitClick : MonoBehaviour
                     SelectUnit.Instance.DeselectAll();
                 }
             }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit hit;
+            Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
+
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+            {
+                pointToMove.transform.position = hit.point;
+                pointToMove.SetActive(false);
+                pointToMove.SetActive(true);
+            }
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            pointToMove.SetActive(false);
         }
     }
 }
