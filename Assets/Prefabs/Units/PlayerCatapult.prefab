@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5397249520463962259}
   - component: {fileID: 5480189290131263369}
   - component: {fileID: 677671220}
-  - component: {fileID: 1875841883}
+  - component: {fileID: 1702458754963154660}
   m_Layer: 7
   m_Name: PlayerCatapult
   m_TagString: Untagged
@@ -88,7 +88,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   unitPrefab: {fileID: 2672573784270523802}
---- !u!114 &1875841883
+--- !u!114 &1702458754963154660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

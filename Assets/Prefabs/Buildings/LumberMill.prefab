@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2085263271622877695}
   - component: {fileID: 2085263271622877688}
   - component: {fileID: 2085263271622877689}
-  - component: {fileID: 2085263271622877690}
   m_Layer: 0
   m_Name: LumberMill
   m_TagString: Untagged
@@ -65,18 +64,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2085263271622877690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085263271622877691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ac0f60a4bd5514c801d6830c91c766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2085263271804680677
 PrefabInstance:
   m_ObjectHideFlags: 0
