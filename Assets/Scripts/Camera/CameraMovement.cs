@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     //variables to store camera speed and zoom speed
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float zoomSpeed = 200f;
+    [SerializeField] private float moveSpeed = 20f;
+    [SerializeField] private float zoomSpeed = 100f;
 
     //variables to store the zoom constraints
     [SerializeField] private float minZoom = 8f;
