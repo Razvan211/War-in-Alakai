@@ -4,6 +4,7 @@ using UnityEngine;
 public class BuildingClass : ScriptableObject
 {
     public int cost;
+    public int health;
     public GameObject prefab;
     public UnitClass unitToSpawn;
 

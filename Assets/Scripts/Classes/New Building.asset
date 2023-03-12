@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64cb7ea7f2d2c346a71b2c48c1e951f, type: 3}
-  m_Name: PlayerCatapult
+  m_Script: {fileID: 11500000, guid: 1b1215a3049d46547a029cd82db333e1, type: 3}
+  m_Name: New Building
   m_EditorClassIdentifier: 
-  melee: 0
-  damage: 100
-  health: 0
   cost: 0
-  reward: 0
-  speed: 0
-  range: 0
-  prefab: {fileID: 919132149155446097, guid: 0d2d68336ac5af74e9abf8ae88c7c17a, type: 3}
-  playerOwned: 1
+  health: 0
+  prefab: {fileID: 919132149155446097, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+  unitToSpawn: {fileID: 11400000, guid: 5c4e5c15821d1614bb14df081af63c6a, type: 2}
