@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64cb7ea7f2d2c346a71b2c48c1e951f, type: 3}
+  m_Name: PlayerCatapult
+  m_EditorClassIdentifier: 
+  melee: 0
+  damage: 100
+  health: 100
+  cost: 20
+  reward: 15
+  speed: 10
+  range: 50
+  prefab: {fileID: 919132149155446097, guid: 0d2d68336ac5af74e9abf8ae88c7c17a, type: 3}
+  playerOwned: 1

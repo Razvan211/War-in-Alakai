@@ -8,6 +8,7 @@ public class UnitMovement : MonoBehaviour
     Camera Cam;
     NavMeshAgent agent;
     public LayerMask ground;
+    public GameObject selectionPoint;
 
     public GameObject unitPrefab;
 
@@ -21,7 +22,7 @@ public class UnitMovement : MonoBehaviour
     {
         Cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
-      
+        selectionPoint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,8 +33,8 @@ public class UnitMovement : MonoBehaviour
 
     private void UnitsMovement()
     {
-       
-            if (Input.GetMouseButtonDown(1))
+        
+            if (Input.GetMouseButtonDown(1) && selectionPoint.activeInHierarchy)
             {
                 RaycastHit hit;
                 Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
