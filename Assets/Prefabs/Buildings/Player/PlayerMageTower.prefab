@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 999908792246832063}
   - component: {fileID: 2804533684143654917}
   - component: {fileID: 6553710118263515187}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7993366303480994383}
   - component: {fileID: 8592174804689976654}
   - component: {fileID: 3911649488603513176}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4372617903596855515}
   - component: {fileID: 9183952531214741342}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 495765400188979995}
   - component: {fileID: 8499825750500290777}
   - component: {fileID: 7143980499012923973}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 4472863595724025513}
   - component: {fileID: 6368763892985355275}
   - component: {fileID: 6047922965805627478}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UnitsUI (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,6 +491,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 590bf2b6cf66ecc42888a6824536a172, type: 3}
       propertyPath: m_Name
       value: BlueMageTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 590bf2b6cf66ecc42888a6824536a172, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590bf2b6cf66ecc42888a6824536a172, type: 3}

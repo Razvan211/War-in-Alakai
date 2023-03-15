@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7538499112959926328}
   - component: {fileID: 3173669520427625194}
   - component: {fileID: 3935328284736142834}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UnitsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4455852771766850199}
   - component: {fileID: 1176897175153121500}
   - component: {fileID: 4684617569376659078}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 1287903539717755417}
   - component: {fileID: 2823772556885809585}
   - component: {fileID: 2230810874394886134}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666848449594862574}
   - component: {fileID: 8377989930977371252}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 6529391273701391259}
   - component: {fileID: 6726097740627158424}
   - component: {fileID: 610914116290631889}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,6 +491,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4770e5e4156c89a469e22f3a417f73f1, type: 3}
       propertyPath: m_Name
       value: BlueLumberMill
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4770e5e4156c89a469e22f3a417f73f1, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4770e5e4156c89a469e22f3a417f73f1, type: 3}

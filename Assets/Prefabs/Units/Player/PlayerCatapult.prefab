@@ -226,6 +226,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  selectionPoint: {fileID: 8424579145405821638}
   unitPrefab: {fileID: 2672573784270523802}
 --- !u!114 &1702458754963154660
 MonoBehaviour:
@@ -424,7 +425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4797500482926222457
 Transform:
   m_ObjectHideFlags: 0

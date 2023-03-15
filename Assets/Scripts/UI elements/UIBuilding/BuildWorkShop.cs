@@ -6,10 +6,12 @@ public class BuildWorkShop : MonoBehaviour
 {
     public Vector3 place;
     public GameObject prefab;
+    public GameManager gm;
+    public bool placeNow;
 
     private RaycastHit hit;
+    private int cost = 10;
 
-    public bool placeNow;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,9 @@ public class BuildWorkShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && placeNow == true)
+        if (Input.GetMouseButtonDown(0) && placeNow == true && gm.playerGold >= cost)
         {
-
+            gm.playerGold = gm.playerGold - cost;
 
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))

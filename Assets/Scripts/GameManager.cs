@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public int aiGold = 0;
     public int playerGold = 0;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (timer > 0) timer -= Time.deltaTime;
         else

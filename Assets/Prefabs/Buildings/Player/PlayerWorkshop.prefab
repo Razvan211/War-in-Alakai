@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &410502469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410502470}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &410502470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410502469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1400536005990091871}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1907591476865068630
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +43,7 @@ GameObject:
   - component: {fileID: 4556511021906778957}
   - component: {fileID: 4505803539545004977}
   - component: {fileID: 3083020369909619990}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +134,7 @@ GameObject:
   - component: {fileID: 1122271005703212609}
   - component: {fileID: 3209571416179821793}
   - component: {fileID: 4178581681352116126}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +210,7 @@ GameObject:
   - component: {fileID: 8222270752620524375}
   - component: {fileID: 1173534130567159594}
   - component: {fileID: 5804649169411886567}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8442626715454676889}
   - component: {fileID: 4858184264293151709}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,6 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400536005990091871}
+  - component: {fileID: 729550818}
   m_Layer: 0
   m_Name: PlayerWorkshop
   m_TagString: Untagged
@@ -333,9 +365,28 @@ Transform:
   - {fileID: 2264823023569568271}
   - {fileID: 6950273270515888402}
   - {fileID: 8222270752620524375}
+  - {fileID: 410502470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &729550818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278523846286896938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbfc74c8a3d423488137bdd62092f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 410502469}
+  selectionCircle: {fileID: 3450834314648807398}
+  prefab: {fileID: 2672573784270523802, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
+  spawnButton: {fileID: 0}
+  spawnPosition: {x: 0, y: 0, z: -5.25}
+  isSelected: 0
 --- !u!1 &9008365248408041026
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +399,7 @@ GameObject:
   - component: {fileID: 8684715135111135378}
   - component: {fileID: 1824281867104231912}
   - component: {fileID: 1752076923483059621}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UnitsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,9 +539,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5870630636663241102, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
       propertyPath: m_Name
       value: BlueWorkshop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273194142407487394, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3591c565ba67f459d8cc25a3b3d525, type: 3}
