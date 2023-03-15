@@ -649,13 +649,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 25ac763b48dc68b498206a106c4a6df0, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1217183622}
+        m_TargetAssemblyTypeName: BuildLumberMill, Assembly-CSharp
+        m_MethodName: PlaceCube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -862,7 +862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28, y: 13}
+  m_AnchoredPosition: {x: 28, y: 20.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &810006890
@@ -909,13 +909,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 25ac763b48dc68b498206a106c4a6df0, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1217183620}
+        m_TargetAssemblyTypeName: BuildWorkShop, Assembly-CSharp
+        m_MethodName: PlaceCube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1125,9 +1125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  zoomSpeed: 10
-  minZoom: 8
-  maxZoom: 20
+  zoomSpeed: 30
+  minZoom: 10
+  maxZoom: 30
   xMargin: 37
   zTopMargin: 40
   zBotMargin: -49
@@ -1628,7 +1628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28, y: 56.653}
+  m_AnchoredPosition: {x: 28, y: 61.25299}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1096437096
@@ -1675,13 +1675,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 25ac763b48dc68b498206a106c4a6df0, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1217183621}
+        m_TargetAssemblyTypeName: BuildMageTower, Assembly-CSharp
+        m_MethodName: PlaceCube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1736,6 +1736,9 @@ GameObject:
   - component: {fileID: 1217183617}
   - component: {fileID: 1217183619}
   - component: {fileID: 1217183618}
+  - component: {fileID: 1217183622}
+  - component: {fileID: 1217183621}
+  - component: {fileID: 1217183620}
   m_Layer: 5
   m_Name: BuildingPanel
   m_TagString: Untagged
@@ -1804,6 +1807,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217183616}
   m_CullTransparentMesh: 1
+--- !u!114 &1217183620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217183616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6526bcc86f94f9448a159ddad4e1254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  place: {x: 0, y: 0, z: 0}
+  prefab: {fileID: 5278523846286896938, guid: 25fa91725f410d14eb9a6ebf4900ad9c, type: 3}
+  placeNow: 0
+--- !u!114 &1217183621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217183616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2300a13abff3bd4b9bec01b44b84243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  place: {x: 0, y: 0, z: 0}
+  prefab: {fileID: 788596222753327065, guid: 9f30f249014270147b1b4de7ca714546, type: 3}
+  placeNow: 0
+--- !u!114 &1217183622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217183616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49d39ad1d1210b4e93e5804e87f9aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  place: {x: 0, y: 0, z: 0}
+  prefab: {fileID: 2085263271622877691, guid: 720456d5896d7484bbf24f521e282755, type: 3}
+  placeNow: 0
 --- !u!1 &1285688849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2511,7 @@ GameObject:
   - component: {fileID: 1529257749}
   m_Layer: 6
   m_Name: Arena
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
