@@ -134,13 +134,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCatapult
       objectReference: {fileID: 0}
+    - target: {fileID: 5480189290131263369, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7549737478473719968, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7549737478473719968, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.756618
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 7549737478473719968, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
       propertyPath: m_LocalPosition.y
@@ -148,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549737478473719968, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -45.16988
+      value: -5.94
       objectReference: {fileID: 0}
     - target: {fileID: 7549737478473719968, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
       propertyPath: m_LocalRotation.w
