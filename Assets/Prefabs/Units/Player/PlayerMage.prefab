@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458350049659016544}
-  m_Layer: 0
+  - component: {fileID: 1133551182}
+  - component: {fileID: 1133551183}
+  - component: {fileID: 1133551184}
+  m_Layer: 7
   m_Name: PlayerMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,12 +31,63 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1420781063592900421}
   - {fileID: 2571541003649633612}
+  - {fileID: 1420781063592900421}
   - {fileID: 2886742837800026594}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133551182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458350049659016545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc55cfb258b1514eb7f4a781a2bdfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1133551183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458350049659016545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d513d194be0d68b44acff2a7b7eb77f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  selectionPoint: {fileID: 8202742678818387205}
+  unitPrefab: {fileID: 1458350049659016545}
+--- !u!195 &1133551184
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458350049659016545}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.84
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3424751587600392982
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2561085579160172082}
   - component: {fileID: 5759303692388407817}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +151,7 @@ GameObject:
   - component: {fileID: 8774797294555866090}
   - component: {fileID: 1116080879902887327}
   - component: {fileID: 7532135377699367729}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +243,7 @@ GameObject:
   - component: {fileID: 4987515267623562395}
   - component: {fileID: 2952482700859662835}
   - component: {fileID: 7117919554294442024}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UnitsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458350049659016544}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &5841333945379200700
 MeshFilter:
@@ -372,7 +426,7 @@ GameObject:
   - component: {fileID: 4550054697211284373}
   - component: {fileID: 7293442818748019022}
   - component: {fileID: 7421384477375422069}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
       propertyPath: m_LocalScale.x
@@ -500,9 +554,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7348555901452710524, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -259972160606440404, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
       propertyPath: m_Name
       value: BlueMage
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257792644167915994, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62a80f9433c80c4a94dbdddef64335b, type: 3}

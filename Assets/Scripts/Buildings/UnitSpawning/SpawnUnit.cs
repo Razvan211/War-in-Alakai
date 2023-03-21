@@ -7,6 +7,7 @@ public class SpawnUnit : MonoBehaviour
 {
     //stores spawnPoint for unit
     [SerializeField]private GameObject spawnPoint;
+    [SerializeField] private GameObject offset;
 
     //stores selection circle
     [SerializeField]private GameObject selectionCircle;
@@ -29,6 +30,8 @@ public class SpawnUnit : MonoBehaviour
         selectionCircle.SetActive(false);
         spawnButton.gameObject.SetActive(false);
         spawnPoint.transform.position = transform.position;
+        offset.transform.position = spawnPosition;
+        
        
     }
 
@@ -50,7 +53,6 @@ public class SpawnUnit : MonoBehaviour
 
     public void SpawnUnits()
     {
-        spawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + spawnPoint.transform.position.z);
-        Instantiate(prefab, spawnPosition, Quaternion.identity);
+        Instantiate(prefab, spawnPoint.transform.position + offset.transform.position, Quaternion.identity);
     }
 }

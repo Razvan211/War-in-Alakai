@@ -381,7 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbfc74c8a3d423488137bdd62092f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 410502469}
+  spawnPoint: {fileID: 5278523846286896938}
+  offset: {fileID: 410502469}
   selectionCircle: {fileID: 3450834314648807398}
   prefab: {fileID: 2672573784270523802, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
   spawnButton: {fileID: 0}
