@@ -18,19 +18,24 @@ public class SpawnUnit : MonoBehaviour
     //stores the spawnUnit button
     public Button spawnButton;
 
-    public Vector3 spawnPosition;
+    
 
 
     //check if building is selected
     [SerializeField] private bool isSelected = false;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        spawnButton = GetComponent<Button>();
+    }
     void Start()
     {
         selectionCircle.SetActive(false);
+        spawnButton = GameObject.Find("SpawnCatapult").GetComponent<Button>();
         spawnButton.gameObject.SetActive(false);
         spawnPoint.transform.position = transform.position;
-        offset.transform.position = spawnPosition;
+        
         
        
     }
@@ -53,6 +58,6 @@ public class SpawnUnit : MonoBehaviour
 
     public void SpawnUnits()
     {
-        Instantiate(prefab, spawnPoint.transform.position + offset.transform.position, Quaternion.identity);
+        Instantiate(prefab, spawnPoint.transform.position + new Vector3(0, 0, -5), Quaternion.identity); 
     }
 }

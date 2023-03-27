@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 252193616}
   - component: {fileID: 252193615}
   m_Layer: 5
-  m_Name: Spawn Catapult
+  m_Name: SpawnCatapult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 475855085}
   - component: {fileID: 475855084}
   m_Layer: 5
-  m_Name: Spawn Warrior
+  m_Name: SpawnWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,9 +1317,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 729550818, guid: 25fa91725f410d14eb9a6ebf4900ad9c, type: 3}
-      propertyPath: spawnButton
-      value: 
-      objectReference: {fileID: 252193615}
+      propertyPath: isSelected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1400536005990091871, guid: 25fa91725f410d14eb9a6ebf4900ad9c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 1151791162}
   - component: {fileID: 1151791161}
   m_Layer: 5
-  m_Name: Spawn Mage
+  m_Name: SpawnMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
