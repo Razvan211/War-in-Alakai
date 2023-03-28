@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &410502469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 410502470}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &410502470
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410502469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1400536005990091871}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018784234958510480
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +553,7 @@ RectTransform:
   m_Children:
   - {fileID: 4348991825018367988}
   m_Father: {fileID: 1400536005990091871}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -735,7 +704,6 @@ Transform:
   - {fileID: 2264823023569568271}
   - {fileID: 6950273270515888402}
   - {fileID: 8222270752620524375}
-  - {fileID: 410502470}
   - {fileID: 1929303057202881429}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -753,10 +721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 5278523846286896938}
-  offset: {fileID: 410502469}
   selectionCircle: {fileID: 3450834314648807398}
   prefab: {fileID: 2672573784270523802, guid: a32f0f08c57462246b0adcc7dff7c385, type: 3}
-  spawnButton: {fileID: 8092984367327148150}
+  buildingCanvas: {fileID: 3051319050123258138}
   isSelected: 0
 --- !u!1 &6559751631988355109
 GameObject:

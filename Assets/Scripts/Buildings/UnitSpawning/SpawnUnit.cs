@@ -7,7 +7,7 @@ public class SpawnUnit : MonoBehaviour
 {
     //stores spawnPoint for unit
     [SerializeField]private GameObject spawnPoint;
-    [SerializeField] private GameObject offset;
+
 
     //stores selection circle
     [SerializeField]private GameObject selectionCircle;
@@ -15,29 +15,28 @@ public class SpawnUnit : MonoBehaviour
     //stores prefab to spawn
     [SerializeField]private GameObject prefab;
 
-    //stores the spawnUnit button
-    public Button spawnButton;
-
-    
-
+    //stores the spawnUnit canvas
+    public Canvas buildingCanvas;
 
     //check if building is selected
     [SerializeField] private bool isSelected = false;
 
+    //Timer for units spawning
+    [SerializeField] private float timer = 2.0f;
+
     // Start is called before the first frame update
     private void Awake()
     {
-        spawnButton = GetComponent<Button>();
+        buildingCanvas = GetComponent<Canvas>();
     }
     void Start()
     {
+
         selectionCircle.SetActive(false);
-        spawnButton = GameObject.Find("SpawnCatapult").GetComponent<Button>();
-        spawnButton.gameObject.SetActive(false);
+        buildingCanvas = GameObject.Find("BuildingUI").GetComponent<Canvas>();
+        buildingCanvas.gameObject.SetActive(false);
         spawnPoint.transform.position = transform.position;
         
-        
-       
     }
 
     // Update is called once per frame
@@ -46,18 +45,28 @@ public class SpawnUnit : MonoBehaviour
         if (isSelected)
         {
             selectionCircle.SetActive(true);
-            spawnButton.gameObject.SetActive(true);
+            buildingCanvas.gameObject.SetActive(true);
         }
         else
         {
             selectionCircle.SetActive(false);
-            spawnButton.gameObject.SetActive(false);
+            buildingCanvas.gameObject.SetActive(false);
         }
         
     }
 
     public void SpawnUnits()
     {
-        Instantiate(prefab, spawnPoint.transform.position + new Vector3(0, 0, -5), Quaternion.identity); 
+        if (timer > 0)
+        {
+            
+            Instantiate(prefab, spawnPoint.transform.position + new Vector3(0, 0, -5), Quaternion.identity);
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            timer = 2.0f;
+        }
+        
     }
 }

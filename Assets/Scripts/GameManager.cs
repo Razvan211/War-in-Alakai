@@ -33,7 +33,8 @@ public class GameManager : MonoBehaviour
             aiGold += 10;
             playerGold += 10;
             timer = 2f;
-            goldText.text = "Gold: " + playerGold;
+            
         }
+        goldText.text = "Gold: " + playerGold;
     }
 }
