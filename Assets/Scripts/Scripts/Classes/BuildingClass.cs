@@ -6,10 +6,10 @@ public class BuildingClass : ScriptableObject
     public int cost;
     public int health;
     public GameObject prefab;
-    public UnitClass unitToSpawn;
+    public Unit unitToSpawn;
 
     public void Spawn(Vector3 position)
     {
-        Instantiate(unitToSpawn.prefab, position, Quaternion.identity);
+        Instantiate(unitToSpawn, position, Quaternion.identity);
     }
 }

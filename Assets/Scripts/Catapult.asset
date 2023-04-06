@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c32a2606cba61041997f17c5ba93fbf, type: 3}
+  m_Name: Catapult
+  m_EditorClassIdentifier: 
+  isPlayerUnit: 0
+  type: 2
+  unitName: Catapult Unit
+  bluePrefab: {fileID: 7917608226671575842, guid: 8c3bce8b591bec5439aff7ae472959bd, type: 3}
+  redPrefab: {fileID: 5098814725718047648, guid: 936e72ca28bdf464cbe5c3400a71aaaa, type: 3}
+  cost: 0
+  attack: 0
+  health: 0
+  armor: 0
+  range: 0
