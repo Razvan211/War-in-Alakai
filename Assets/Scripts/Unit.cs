@@ -21,12 +21,8 @@ namespace RN.WIA.Units
 
         [Header("Units Stats")]
 
-        public int health;
-        public int attack;
-        public int cost;
-        public int armor;
-        public int range;
-        
+
+        public UnitsStats.Stats stats;
     }
 
 }

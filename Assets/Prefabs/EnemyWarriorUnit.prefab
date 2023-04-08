@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8346109312650242243}
   - component: {fileID: 5249719613789314302}
-  m_Layer: 6
+  - component: {fileID: 1842261467}
+  - component: {fileID: 1842261468}
+  m_Layer: 7
   m_Name: EnemyWarriorUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +49,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7022259, y: 1.244151, z: 0.481402}
   m_Center: {x: -0.02610767, y: 0.6579245, z: 0.06868714}
+--- !u!114 &1842261467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236649372690964436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d6c02ee6936b945ad086cd8313ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eUnitStats:
+    health: 0
+    attack: 0
+    cost: 0
+    armor: 0
+    range: 0
+--- !u!195 &1842261468
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236649372690964436}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5489166734528587037
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3498884945116039897}
   - component: {fileID: 8075012601968212351}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,19 +238,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1540650338919030430, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -1215088673186257983, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -259972160606440404, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 635547659545568360, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Name
@@ -216,19 +258,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1628054723627183245, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4849393385929907967, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6017510239773530926, guid: 32f8304980719384491792a2483168ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f8304980719384491792a2483168ba, type: 3}

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using RN.WIA.Player;
+
 
 namespace RN.WIA.Units
 {
     public class UnitManager : MonoBehaviour
     {
         public static UnitManager instance;
+
+        public LayerMask playerUnitLayer, enemyUnitLayer;
 
         [SerializeField]
         private Unit warrior, mage, catapult;
@@ -24,7 +28,13 @@ namespace RN.WIA.Units
             DontDestroyOnLoad(gameObject);
         }
 
-        public (int health, int attack, int cost, int armor, int range) GetUnitStats(string type)
+        private void Start()
+        {
+            playerUnitLayer = LayerMask.NameToLayer("PlayerUnits");
+            enemyUnitLayer = LayerMask.NameToLayer("EnemyUnits");
+        }
+
+        public (float health, float attack, float cost, float armor, float range) GetUnitStats(string type)
         {
             Unit unit;
             switch (type)
@@ -42,12 +52,14 @@ namespace RN.WIA.Units
                     Debug.Log($"Unit Type: {type} does not exist!");
                     return (0, 0, 0, 0, 0);
             }
-            return (unit.health, unit.attack, unit.cost, unit.armor, unit.range);
+            return (unit.stats.health, unit.stats.attack, unit.stats.cost, unit.stats.armor, unit.stats.range);
                 
         }
 
         public void SetUnitStats(Transform type)
         {
+            Transform playerUnits = PlayerManager.instance.playerUnits;
+            Transform enemyUnits = PlayerManager.instance.enemyUnits;
             
             foreach(Transform units in type)
             {
@@ -57,22 +69,28 @@ namespace RN.WIA.Units
                     string unitName = units.name.Substring(0, units.name.Length - 1).ToLower();
 
                     var stats = GetUnitStats(unitName);
-                    Player.PlayerUnits playerUnit;
+                    
 
-                   if (type == WIA.Player.PlayerManager.instance.playerUnits)
+                   if (type == playerUnits)
                     {
-                        playerUnit = unit.GetComponent<Player.PlayerUnits>();
-                        //set stats for all units
-                        playerUnit.health = stats.health;
-                        playerUnit.attack = stats.attack;
-                        playerUnit.cost = stats.cost;
-                        playerUnit.armor = stats.armor;
-                        playerUnit.range = stats.range;
+                        Player.PlayerUnits playerUnit = unit.GetComponent<Player.PlayerUnits>();
+                        //set stats for all player units
+                        playerUnit.pUnitStats.health = stats.health;
+                        playerUnit.pUnitStats.attack = stats.attack;
+                        playerUnit.pUnitStats.cost = stats.cost;
+                        playerUnit.pUnitStats.armor = stats.armor;
+                        playerUnit.pUnitStats.range = stats.range;
 
                     }
-                    else if(type == WIA.Player.PlayerManager.instance.enemyUnits)
+                    else if(type == enemyUnits)
                     {
-
+                        Enemy.EnemyUnits enemyUnit = unit.GetComponent<Enemy.EnemyUnits>();
+                        //set stats for all enemy units
+                        enemyUnit.eUnitStats.health = stats.health;
+                        enemyUnit.eUnitStats.attack = stats.attack;
+                        enemyUnit.eUnitStats.cost = stats.cost;
+                        enemyUnit.eUnitStats.armor = stats.armor;
+                        enemyUnit.eUnitStats.range = stats.range;
                     }
 
                     

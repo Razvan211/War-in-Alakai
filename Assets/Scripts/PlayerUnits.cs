@@ -11,7 +11,7 @@ namespace RN.WIA.Units.Player {
     {
         private NavMeshAgent agent;
 
-        public int health, attack, cost, armor, range;
+        public UnitsStats.Stats pUnitStats;
 
         private void OnEnable()
         {

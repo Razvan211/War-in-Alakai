@@ -1921,6 +1921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef87e0296aa8f24989311d96faeef07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warrior: {fileID: 11400000, guid: 82d6dc298f199c94796c375b80067f2c, type: 2}
+  mage: {fileID: 11400000, guid: c855efe5e11f5804faefc71699059327, type: 2}
+  catapult: {fileID: 11400000, guid: e6c148ea9302c3a4f97dbc4009333daa, type: 2}
 --- !u!114 &1024289283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3651,6 +3654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUnits: {fileID: 1816143496}
+  enemyUnits: {fileID: 1277542534}
 --- !u!1001 &1592758703
 PrefabInstance:
   m_ObjectHideFlags: 0

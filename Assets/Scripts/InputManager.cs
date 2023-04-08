@@ -21,7 +21,7 @@ namespace RN.WIA.InputManager
         private List<Transform> selectedUnits = new List<Transform>();
 
 
-        public void Awake()
+        private void Awake()
         {
             // Singleton 
             if (instance != null && instance != this)
@@ -33,6 +33,11 @@ namespace RN.WIA.InputManager
             instance = this;
             DontDestroyOnLoad(gameObject);
 
+        }
+
+        private void Start()
+        {
+            
         }
 
         //draw

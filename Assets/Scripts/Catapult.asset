@@ -16,8 +16,8 @@ MonoBehaviour:
   unitName: Catapult Unit
   bluePrefab: {fileID: 7917608226671575842, guid: 8c3bce8b591bec5439aff7ae472959bd, type: 3}
   redPrefab: {fileID: 5098814725718047648, guid: 936e72ca28bdf464cbe5c3400a71aaaa, type: 3}
-  health: 50
+  health: 100
   attack: 100
   cost: 100
   armor: 3
-  range: 20
+  range: 0

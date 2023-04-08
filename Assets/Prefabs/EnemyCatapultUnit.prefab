@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5098814725718047651}
   - component: {fileID: 2330720548725499184}
-  m_Layer: 6
+  - component: {fileID: 7540343401736817707}
+  - component: {fileID: 7109884747728435856}
+  m_Layer: 7
   m_Name: EnemyCatapultUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +49,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.181553, y: 1.075037, z: 2.406669}
   m_Center: {x: 0.005339026, y: 0.5773759, z: -0.09328294}
+--- !u!195 &7540343401736817707
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098814725718047648}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7109884747728435856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098814725718047648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d6c02ee6936b945ad086cd8313ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eUnitStats:
+    health: 0
+    attack: 0
+    cost: 0
+    armor: 0
+    range: 0
 --- !u!1 &6861763099300159103
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967795862388411038}
   - component: {fileID: 5704293645577441253}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,11 +238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 695996339047175466, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Name
@@ -208,15 +250,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8513859187771203891, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9013638940889411661, guid: dd534e9750ef3214d822af76d8369d84, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd534e9750ef3214d822af76d8369d84, type: 3}

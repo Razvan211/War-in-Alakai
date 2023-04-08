@@ -32,7 +32,7 @@ namespace RN.WIA.Player
         }
 
 
-        void Update()
+        private void Update()
         {
             InputManager.InputManager.instance.ManageUnitsMovement();
         }
