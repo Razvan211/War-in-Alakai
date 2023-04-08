@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RN.WIA.Units.Player;
 
 namespace RN.WIA.InputManager
 {
@@ -22,6 +23,7 @@ namespace RN.WIA.InputManager
 
         public void Awake()
         {
+            // Singleton 
             if (instance != null && instance != this)
             {
                 Destroy(gameObject);
@@ -87,6 +89,33 @@ namespace RN.WIA.InputManager
                 }
                 drag = false;
             }
+
+            if (Input.GetMouseButtonDown(1) && AreUnitsSelected())
+            {
+                //create ray
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                //check if the unit is hit
+                if (Physics.Raycast(ray, out hit))
+                {
+                    LayerMask targetedLayer = hit.transform.gameObject.layer;
+
+                    switch (targetedLayer.value)
+                    {
+                        case 6: //Layer for player units
+                            
+                            break;
+                        case 7: //Layer for enemy units
+                        default:
+                            foreach(Transform units in selectedUnits)
+                            {
+                                PlayerUnits playerUnits = units.gameObject.GetComponent<PlayerUnits>();
+                                playerUnits.UnitMovement(hit.point);
+                            }
+                            break;
+                    }
+                }
+            }
         }
 
         private void SelectUnit(Transform unit, bool selectMore = false)
@@ -120,6 +149,19 @@ namespace RN.WIA.InputManager
             Camera cam = Camera.main;
             Bounds viewBounds = MultipleSelection.GetBounds(cam, mousePosition, Input.mousePosition);
             return viewBounds.Contains(cam.WorldToViewportPoint(tr.position));
+        }
+
+        //Checks if there are units in the selectedUnits list
+        private bool AreUnitsSelected()
+        {
+            if(selectedUnits.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

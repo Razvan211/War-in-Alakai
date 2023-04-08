@@ -12,7 +12,8 @@ namespace RN.WIA.Player
         public static PlayerManager instance;
 
         public Transform playerUnits;
-        void Start()
+        public Transform enemyUnits;
+        void Awake()
         {
             if (instance != null && instance != this)
             {
@@ -24,7 +25,13 @@ namespace RN.WIA.Player
             }       
         }
 
-        
+        private void Start()
+        {
+            Units.UnitManager.instance.SetUnitStats(playerUnits);
+            Units.UnitManager.instance.SetUnitStats(enemyUnits);
+        }
+
+
         void Update()
         {
             InputManager.InputManager.instance.ManageUnitsMovement();

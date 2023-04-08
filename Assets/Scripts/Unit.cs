@@ -13,20 +13,19 @@ namespace RN.WIA.Units
             Catapult
         };
 
-        public bool isPlayerUnit;
-
+        [Header("Unit Properties")]
         public unitType type;
-
         public string unitName;
-
         public GameObject bluePrefab;
         public GameObject redPrefab;
 
-        public int cost;
-        public int attack;
+        [Header("Units Stats")]
+
         public int health;
+        public int attack;
+        public int cost;
         public int armor;
-        public float range;
+        public int range;
         
     }
 

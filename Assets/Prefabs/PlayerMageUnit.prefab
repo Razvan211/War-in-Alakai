@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3467878856677311123}
   - component: {fileID: 8609268583653095024}
+  - component: {fileID: 3286933490226447427}
+  - component: {fileID: 5270301793486709930}
   m_Layer: 6
   m_Name: PlayerMageUnit
   m_TagString: Untagged
@@ -47,6 +49,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6570413, y: 1.1499999, z: 0.6122148}
   m_Center: {x: -0.0077893585, y: 0.61, z: 0.046213865}
+--- !u!195 &3286933490226447427
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467878856677311122}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5270301793486709930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467878856677311122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5f4fc109d61544bb218aa7227ddba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3590209157363486319
 GameObject:
   m_ObjectHideFlags: 0
