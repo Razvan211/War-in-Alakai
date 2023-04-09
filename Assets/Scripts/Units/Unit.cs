@@ -20,8 +20,6 @@ namespace RN.WIA.Units
         public GameObject redPrefab;
 
         [Header("Units Stats")]
-
-
         public UnitsStats.Stats stats;
     }
 
