@@ -18,24 +18,18 @@ namespace RN.WIA.Units.Enemy
         //target for aggro
         private Transform target;
 
-        private Player.PlayerUnits playerUnit;
+        private UnitsHealth playerUnit;
 
         private bool hasAggro = false;
 
         private float distance;
-
-        //variables for healthbar
-        public GameObject unitHealthbar;
-        public Image healthAmout;
-        public float currentHealth;
-
 
         private float attackCd;
 
         private void Start()
         {
             agent = gameObject.GetComponent<NavMeshAgent>();
-            currentHealth = eUnitStats.health;
+        
         }
 
         private void Update()
@@ -52,10 +46,7 @@ namespace RN.WIA.Units.Enemy
             }
         }
 
-        private void LateUpdate()
-        {
-            Health();
-        }
+     
         private void SearchEnemy()
         {
             rangeCollider = Physics.OverlapSphere(transform.position, eUnitStats.sightRange);
@@ -65,7 +56,7 @@ namespace RN.WIA.Units.Enemy
                 if(rangeCollider[i].gameObject.layer == UnitManager.instance.playerUnitLayer)
                 {
                     target = rangeCollider[i].gameObject.transform;
-                    playerUnit = target.gameObject.GetComponent<Player.PlayerUnits>();
+                    playerUnit = target.gameObject.GetComponentInChildren<UnitsHealth>();
                     hasAggro = true;
                     break;
                 }
@@ -92,34 +83,6 @@ namespace RN.WIA.Units.Enemy
 
         }
 
-
-        private void Health()
-        {
-            Camera cam = Camera.main;
-            //rotates healthbars to look at the camera
-            unitHealthbar.transform.LookAt(unitHealthbar.transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
-
-            healthAmout.fillAmount = currentHealth / eUnitStats.health;
-
-            if (currentHealth <= 0)
-            {
-                
-                Die();
-            }
-        }
-
-        //handles death
-        private void Die()
-        {
-            InputManager.InputManager.instance.selectedUnits.Remove(gameObject.transform);
-            Destroy(gameObject);
-        }
-
-        private void TakeDamage(float damage)
-        {
-            float takenDamage = damage + eUnitStats.armor;
-            currentHealth -= takenDamage;
-        }
 
         private void Attack()
         {
