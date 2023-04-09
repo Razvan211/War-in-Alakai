@@ -34,10 +34,10 @@ namespace RN.WIA.Units
             enemyUnitLayer = LayerMask.NameToLayer("EnemyUnits");
         }
 
-        public (float health, float attack, float cost, float armor, float range) GetUnitStats(string type)
+        public UnitsStats.Stats GetStats(string unitType)
         {
             Unit unit;
-            switch (type)
+            switch (unitType)
             {
                 case "warrior":
                     unit = warrior;
@@ -49,10 +49,10 @@ namespace RN.WIA.Units
                     unit = catapult;
                     break;
                 default:
-                    Debug.Log($"Unit Type: {type} does not exist!");
-                    return (0, 0, 0, 0, 0);
+                    Debug.Log($"Unit Type: {unitType} does not exist!");
+                    return null;
             }
-            return (unit.stats.health, unit.stats.attack, unit.stats.cost, unit.stats.armor, unit.stats.range);
+            return unit.stats;
                 
         }
 
@@ -68,29 +68,21 @@ namespace RN.WIA.Units
                     // remove the last letter and make the string lower case
                     string unitName = units.name.Substring(0, units.name.Length - 1).ToLower();
 
-                    var stats = GetUnitStats(unitName);
+                    var stats = GetStats(unitName);
                     
 
                    if (type == playerUnits)
                     {
                         Player.PlayerUnits playerUnit = unit.GetComponent<Player.PlayerUnits>();
                         //set stats for all player units
-                        playerUnit.pUnitStats.health = stats.health;
-                        playerUnit.pUnitStats.attack = stats.attack;
-                        playerUnit.pUnitStats.cost = stats.cost;
-                        playerUnit.pUnitStats.armor = stats.armor;
-                        playerUnit.pUnitStats.range = stats.range;
+                        playerUnit.pUnitStats = GetStats(unitName);
 
                     }
                     else if(type == enemyUnits)
                     {
                         Enemy.EnemyUnits enemyUnit = unit.GetComponent<Enemy.EnemyUnits>();
                         //set stats for all enemy units
-                        enemyUnit.eUnitStats.health = stats.health;
-                        enemyUnit.eUnitStats.attack = stats.attack;
-                        enemyUnit.eUnitStats.cost = stats.cost;
-                        enemyUnit.eUnitStats.armor = stats.armor;
-                        enemyUnit.eUnitStats.range = stats.range;
+                        enemyUnit.eUnitStats = GetStats(unitName);
                     }
 
                     

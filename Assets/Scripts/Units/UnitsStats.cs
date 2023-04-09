@@ -11,7 +11,7 @@ namespace RN.WIA.Units
         [System.Serializable]
         public class Stats
         {
-            public float health, attack, cost, armor, range;
+            public float health, attack, cost, armor, range, sightRange, attkSpeed;
         }
        
     }

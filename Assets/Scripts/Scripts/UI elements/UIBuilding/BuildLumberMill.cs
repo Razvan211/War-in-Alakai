@@ -6,7 +6,7 @@ public class BuildLumberMill : MonoBehaviour
 {
     public Vector3 place;
     public GameObject prefab;
-    public GameManager gm;
+   // public GameManager gm;
     public bool placeNow;
 
     private RaycastHit hit;
@@ -24,9 +24,9 @@ public class BuildLumberMill : MonoBehaviour
     void Update()
     {
       
-        if (Input.GetMouseButtonDown(0) && placeNow == true && gm.playerGold >= cost)
+        if (Input.GetMouseButtonDown(0) && placeNow == true)// && gm.playerGold >= cost)
         {
-            gm.playerGold = gm.playerGold - cost;
+            //gm.playerGold = gm.playerGold - cost;
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {

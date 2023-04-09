@@ -22,13 +22,14 @@ namespace RN.WIA.Player
             else
             {
                 instance = this;
-            }       
+            }
+            Units.UnitManager.instance.SetUnitStats(playerUnits);
+            Units.UnitManager.instance.SetUnitStats(enemyUnits);
         }
 
         private void Start()
         {
-            Units.UnitManager.instance.SetUnitStats(playerUnits);
-            Units.UnitManager.instance.SetUnitStats(enemyUnits);
+          
         }
 
 

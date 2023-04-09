@@ -7,8 +7,14 @@ namespace RN.WIA.InputManager
 {
     public class InputManager : MonoBehaviour
     {
+     
+
 
         public static InputManager instance;
+
+        public Camera cam;
+        public GameObject pointToMove;
+        public LayerMask ground;
 
         private RaycastHit hit; //ray target
 
@@ -17,8 +23,10 @@ namespace RN.WIA.InputManager
 
         private Vector3 mousePosition;
 
+       
+
         //stores the selected units
-        private List<Transform> selectedUnits = new List<Transform>();
+        public List<Transform> selectedUnits = new List<Transform>();
 
 
         private void Awake()
@@ -37,7 +45,13 @@ namespace RN.WIA.InputManager
 
         private void Start()
         {
-            
+            pointToMove.SetActive(false);
+            ground = LayerMask.GetMask("Ground");
+        }
+
+        private void Update()
+        {
+            LocationOutput();
         }
 
         //draw
@@ -56,6 +70,7 @@ namespace RN.WIA.InputManager
             if (Input.GetMouseButtonDown(0))
             {
                 mousePosition = Input.mousePosition;
+               
                 //create ray
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -99,7 +114,7 @@ namespace RN.WIA.InputManager
             {
                 //create ray
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+                
                 //check if the unit is hit
                 if (Physics.Raycast(ray, out hit))
                 {
@@ -112,7 +127,8 @@ namespace RN.WIA.InputManager
                             break;
                         case 7: //Layer for enemy units
                         default:
-                            foreach(Transform units in selectedUnits)
+                           
+                            foreach (Transform units in selectedUnits)
                             {
                                 PlayerUnits playerUnits = units.gameObject.GetComponent<PlayerUnits>();
                                 playerUnits.UnitMovement(hit.point);
@@ -167,6 +183,27 @@ namespace RN.WIA.InputManager
             {
                 return false;
             }
+        }
+
+        private void LocationOutput()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                RaycastHit hit;
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+                {
+                    pointToMove.transform.position = hit.point;
+                    pointToMove.SetActive(false);
+                    pointToMove.SetActive(true);
+                }
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                pointToMove.SetActive(false);
+            }
+
         }
     }
 }
