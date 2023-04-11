@@ -49,17 +49,14 @@ namespace RN.WIA.Units.Enemy
      
         private void SearchEnemy()
         {
-            rangeCollider = Physics.OverlapSphere(transform.position, eUnitStats.sightRange);
+            rangeCollider = Physics.OverlapSphere(transform.position, eUnitStats.sightRange, UnitManager.instance.playerUnitLayer);
             //checks if an object enters our collider and if the object is a playerunit
-            for(int i = 0; i < rangeCollider.Length; i++)
+            for(int i = 0; i < rangeCollider.Length;)
             {
-                if(rangeCollider[i].gameObject.layer == UnitManager.instance.playerUnitLayer)
-                {
-                    target = rangeCollider[i].gameObject.transform;
-                    playerUnit = target.gameObject.GetComponentInChildren<UnitsHealth>();
-                    hasAggro = true;
-                    break;
-                }
+                target = rangeCollider[i].gameObject.transform;
+                playerUnit = target.gameObject.GetComponentInChildren<UnitsHealth>();
+                hasAggro = true;
+                break;
             }
         }
 

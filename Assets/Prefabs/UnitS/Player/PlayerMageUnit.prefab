@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8609268583653095024}
   - component: {fileID: 3286933490226447427}
   - component: {fileID: 5270301793486709930}
+  - component: {fileID: 4333453769514175563}
   m_Layer: 6
   m_Name: PlayerMageUnit
   m_TagString: Untagged
@@ -91,9 +92,21 @@ MonoBehaviour:
     armor: 0
     range: 0
     sightRange: 0
-  unitHealthbar: {fileID: 1506320456812968573}
-  healthAmout: {fileID: 5199199698649295572}
-  currentHealth: 0
+    attkSpeed: 0
+--- !u!114 &4333453769514175563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467878856677311122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8621a0a526456409ca1da89a05f0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelectable: 0
+  selectionCircle: {fileID: 3590209157363486319}
 --- !u!1 &3590209157363486319
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,22 +288,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad4ed58185598541928cd078284000b, type: 3}
---- !u!1 &1506320456812968573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 669934695272043974, guid: 6ad4ed58185598541928cd078284000b, type: 3}
-  m_PrefabInstance: {fileID: 2137961292321517499}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5199199698649295572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6164536064038192495, guid: 6ad4ed58185598541928cd078284000b, type: 3}
-  m_PrefabInstance: {fileID: 2137961292321517499}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7364976712809100265 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907617840708279378, guid: 6ad4ed58185598541928cd078284000b, type: 3}

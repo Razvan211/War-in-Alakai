@@ -15,6 +15,7 @@ namespace RN.WIA.InputManager
         public Camera cam;
         public GameObject pointToMove;
         public LayerMask ground;
+        public LayerMask selectableLayer = new LayerMask();
 
         private RaycastHit hit; //ray target
 
@@ -27,6 +28,7 @@ namespace RN.WIA.InputManager
 
         //stores the selected units
         public List<Transform> selectedUnits = new List<Transform>();
+        public Transform selectedStrucutre = null;
 
 
         private void Awake()
@@ -74,20 +76,20 @@ namespace RN.WIA.InputManager
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                 //check if the unit is hit
-                if(Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, 100, selectableLayer))
                 {
-                    LayerMask targetedLayer = hit.transform.gameObject.layer;
-
-                    switch (targetedLayer.value)
+                    if (SelectedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift)))
                     {
-                        case 6: //Layer for units
-                            SelectUnit(hit.transform, Input.GetKey(KeyCode.LeftShift));
-                            break;
-                        default:
-                            drag = true;
-                            DeselectUnit();
-                            break;
+                        
+                    }else if (SelectedStructure(hit.transform))
+                    {
+
                     }
+                }
+                else
+                {
+                    drag = true;
+                    DeselectUnit();
                 }
             }
 
@@ -101,7 +103,7 @@ namespace RN.WIA.InputManager
                     {
                         if (isInRectangle(unit))
                         {
-                            SelectUnit(unit, true);
+                            SelectedUnit(unit, true);
                         }
                         
                     }
@@ -127,9 +129,9 @@ namespace RN.WIA.InputManager
                         case 7: //Layer for enemy units
                         default:
                            
-                            foreach (Transform units in selectedUnits)
+                            foreach (Transform unit in selectedUnits)
                             {
-                                PlayerUnits playerUnits = units.gameObject.GetComponent<PlayerUnits>();
+                                PlayerUnits playerUnits = unit.gameObject.GetComponent<PlayerUnits>();
                                 playerUnits.UnitMovement(hit.point);
                             }
                             break;
@@ -138,22 +140,17 @@ namespace RN.WIA.InputManager
             }
         }
 
-        private void SelectUnit(Transform unit, bool selectMore = false)
-        {
-            if(!selectMore)
-            {
-                DeselectUnit();
-            }
-          
-            selectedUnits.Add(unit);
-            unit.Find("SelectionCircle").gameObject.SetActive(true);
-        }
-
         private void DeselectUnit()
         {
+            if (selectedStrucutre)
+            {
+                selectedStrucutre.gameObject.GetComponent<Selectables.SelectStructure>().NoSelect();
+                selectedStrucutre = null;
+            }
+
             for(int i = 0; i < selectedUnits.Count; i++)
             {
-                selectedUnits[i].Find("SelectionCircle").gameObject.SetActive(false);
+                selectedUnits[i].gameObject.GetComponent<Selectables.SelectUnit>().NoSelect();
             }
             selectedUnits.Clear();
         }
@@ -203,6 +200,48 @@ namespace RN.WIA.InputManager
                 pointToMove.SetActive(false);
             }
 
+        }
+
+
+        
+        private Selectables.SelectUnit SelectedUnit(Transform tr, bool selectMore = false)
+        {
+            Selectables.SelectUnit sUnit = tr.GetComponent<Selectables.SelectUnit>();
+            if (sUnit)
+            {
+                if (!selectMore)
+                {
+                    DeselectUnit();
+                }
+                selectedUnits.Add(sUnit.gameObject.transform);
+
+                sUnit.OnSelect();
+
+                return sUnit;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private Selectables.SelectStructure SelectedStructure(Transform tr)
+        {
+            Selectables.SelectStructure sStructure = tr.GetComponent<Selectables.SelectStructure>();
+            if (sStructure)
+            {
+                DeselectUnit();
+
+                selectedStrucutre = sStructure.gameObject.transform;
+
+                sStructure.OnSelect();
+
+                return sStructure;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
