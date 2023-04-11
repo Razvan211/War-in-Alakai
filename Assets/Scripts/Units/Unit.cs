@@ -16,6 +16,7 @@ namespace RN.WIA.Units
         [Header("Unit Properties")]
         public unitType type;
         public string unitName;
+        public int cost;
         public GameObject bluePrefab;
         public GameObject redPrefab;
 

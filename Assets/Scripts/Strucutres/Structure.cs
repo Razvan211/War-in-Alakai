@@ -18,16 +18,17 @@ namespace RN.WIA.Structure
 
         public enum structureResources
         {
-            Gold,
-            Lumber,
-            None
+            Gold
         }
 
         [Header("Structure Properties")]
         public structureType type;
         public structureResources resources;
         public string structureName;
-        public GameObject prefab;
+        public int cost;
+        public StructureFunctionality.SpawnableUnits units;
+        public GameObject bluePrefab;
+        public GameObject redPrefab;
 
         [Header("Structure Stats")]
         public StructureStats.StrucutreStats structStats;
