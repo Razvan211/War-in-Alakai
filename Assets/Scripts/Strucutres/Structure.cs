@@ -31,7 +31,7 @@ namespace RN.WIA.Structure
         public GameObject redPrefab;
 
         [Header("Structure Stats")]
-        public StructureStats.StrucutreStats structStats;
+        public StructureStats.Stats structStats;
     }
 }
 

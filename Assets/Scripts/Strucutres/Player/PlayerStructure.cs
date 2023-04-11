@@ -6,7 +6,7 @@ namespace RN.WIA.Structure.Player
 {
     public class PlayerStructure : MonoBehaviour
     {
-        public StructureStats.StrucutreStats stats;
+        public StructureStats.Stats stats;
     }
 }
 

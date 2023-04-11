@@ -46,7 +46,6 @@ namespace RN.WIA.InputManager
         private void Start()
         {
             pointToMove.SetActive(false);
-            ground = LayerMask.GetMask("Ground");
         }
 
         private void Update()

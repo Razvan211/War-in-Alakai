@@ -7,7 +7,7 @@ namespace RN.WIA.Structure
     public class StructureStats : ScriptableObject
     {
         [System.Serializable]
-        public class StrucutreStats {
+        public class Stats {
             public float health, armor, attack, resources;
         }
 
