@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24c1535dd1dcdc45a51ff120fa6b5d3, type: 3}
+  m_Name: MageTower
+  m_EditorClassIdentifier: 
+  type: 0
+  resources: 0
+  structureName: MageTower
+  cost: 300
+  bluePrefab: {fileID: 1519060373363961473, guid: 9f30f249014270147b1b4de7ca714546, type: 3}
+  redPrefab: {fileID: 8244484905184678219, guid: f59ce9eaf3d037942ae0b6ace8c41a4e, type: 3}
+  spawnImg: {fileID: 6813709090894790802, guid: ab3dde3a86f0fa346a7d984096a1b037, type: 3}
+  structStats:
+    health: 450
+    armor: 20
+    attack: 50
+    resources: 0

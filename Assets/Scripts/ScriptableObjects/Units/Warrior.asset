@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c32a2606cba61041997f17c5ba93fbf, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  type: 0
+  unitName: Warrior Unit
+  cost: 0
+  bluePrefab: {fileID: 3025061531001083678, guid: 4c1e91d5a3aca0b4182d6d6e95ac8310, type: 3}
+  redPrefab: {fileID: 1236649372690964436, guid: 8c1f7f636d111ce48b65a8e74a924a74, type: 3}
+  spawnImg: {fileID: 6813709090894790802, guid: ab3dde3a86f0fa346a7d984096a1b037, type: 3}
+  stats:
+    health: 250
+    attack: 30
+    cost: 30
+    armor: 20
+    range: 1
+    sightRange: 20
+    attkSpeed: 1
