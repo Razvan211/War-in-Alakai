@@ -83,7 +83,7 @@ namespace RN.WIA.InputManager
                         
                     }else if (SelectedStructure(hit.transform))
                     {
-
+                        Debug.Log("No Strucure Found!");
                     }
                 }
                 else
@@ -144,13 +144,13 @@ namespace RN.WIA.InputManager
         {
             if (selectedStrucutre)
             {
-                selectedStrucutre.gameObject.GetComponent<Selectables.SelectStructure>().NoSelect();
+                selectedStrucutre.gameObject.GetComponent<Selectables.SelectStructure>().RemoveSelection();
                 selectedStrucutre = null;
             }
 
             for(int i = 0; i < selectedUnits.Count; i++)
             {
-                selectedUnits[i].gameObject.GetComponent<Selectables.SelectUnit>().NoSelect();
+                selectedUnits[i].gameObject.GetComponent<Selectables.SelectUnit>().RemoveSelection();
             }
             selectedUnits.Clear();
         }
@@ -227,6 +227,7 @@ namespace RN.WIA.InputManager
 
         private Selectables.SelectStructure SelectedStructure(Transform tr)
         {
+            
             Selectables.SelectStructure sStructure = tr.GetComponent<Selectables.SelectStructure>();
             if (sStructure)
             {

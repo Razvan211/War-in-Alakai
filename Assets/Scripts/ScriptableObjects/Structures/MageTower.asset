@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resources: 0
-  structureName: 
-  cost: 0
-  units:
-    spawnableUnits: {fileID: 0}
-  bluePrefab: {fileID: 0}
-  redPrefab: {fileID: 0}
+  structureName: MageTower
+  cost: 300
+  bluePrefab: {fileID: 1519060373363961473, guid: 9f30f249014270147b1b4de7ca714546, type: 3}
+  redPrefab: {fileID: 8244484905184678219, guid: f59ce9eaf3d037942ae0b6ace8c41a4e, type: 3}
   structStats:
-    health: 0
-    armor: 0
-    attack: 0
+    health: 450
+    armor: 20
+    attack: 50
     resources: 0

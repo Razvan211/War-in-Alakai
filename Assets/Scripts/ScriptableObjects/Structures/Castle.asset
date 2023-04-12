@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resources: 0
-  structureName: 
+  structureName: Castle
   cost: 0
-  units:
-    spawnableUnits: {fileID: 0}
-  bluePrefab: {fileID: 0}
-  redPrefab: {fileID: 0}
+  bluePrefab: {fileID: 6798982959917428928, guid: 4a10f13dd81b7af49b69f8cf71894556, type: 3}
+  redPrefab: {fileID: 7591563403766364353, guid: 2fade784a4e839c43b89aa6da944fef3, type: 3}
   structStats:
-    health: 0
-    armor: 0
+    health: 1200
+    armor: 50
     attack: 0
-    resources: 0
+    resources: 10

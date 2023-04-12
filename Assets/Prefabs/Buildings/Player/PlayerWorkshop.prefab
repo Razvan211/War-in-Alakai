@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSelected: 0
   selectionCircle: {fileID: 1554551381867762102}
+  commands: {fileID: 11400000, guid: d0bbdee9b594ba6458bdd8f3cf4ec551, type: 2}
 --- !u!65 &5360414350271721727
 BoxCollider:
   m_ObjectHideFlags: 0

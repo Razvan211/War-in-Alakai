@@ -26,7 +26,6 @@ namespace RN.WIA.Structure
         public structureResources resources;
         public string structureName;
         public int cost;
-        public StructureFunctionality.SpawnableUnits units;
         public GameObject bluePrefab;
         public GameObject redPrefab;
 

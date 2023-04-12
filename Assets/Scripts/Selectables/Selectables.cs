@@ -19,7 +19,7 @@ namespace RN.WIA.Selectables
             isSelected = true;
         }
 
-        public virtual void NoSelect()
+        public virtual void RemoveSelection()
         {
             HideSelectionCircle();
             isSelected = false;
