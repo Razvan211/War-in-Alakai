@@ -8,8 +8,8 @@ namespace RN.WIA.Commands.Spawn
     public class PlayerCommands : ScriptableObject
     {
 
-        public Units.Unit[] units = new Units.Unit[0];
-        public Structure.Structure[] structures = new Structure.Structure[0];
+        public List<Units.Unit> units = new List<Units.Unit>();
+        public List<Structure.Structure> structures = new List<Structure.Structure>();
 
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RN.WIA.Units.Player;
+using UnityEngine.EventSystems;
 
 namespace RN.WIA.InputManager
 {
@@ -68,8 +69,14 @@ namespace RN.WIA.InputManager
 
         public void ManageUnitsMovement()
         {
+           
             if (Input.GetMouseButtonDown(0))
             {
+                //if we left click and we are over the UI we break from the method
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
                 mousePosition = Input.mousePosition;
                
                 //create ray
@@ -83,7 +90,7 @@ namespace RN.WIA.InputManager
                         
                     }else if (SelectedStructure(hit.transform))
                     {
-                        Debug.Log("No Strucure Found!");
+                        Debug.Log("Structure selected");
                     }
                 }
                 else

@@ -26,8 +26,11 @@ namespace RN.WIA.Structure
         public structureResources resources;
         public string structureName;
         public int cost;
+        public float timeToSpawn;
         public GameObject bluePrefab;
         public GameObject redPrefab;
+        public GameObject spawnImg;
+
 
         [Header("Structure Stats")]
         public StructureStats.Stats structStats;

@@ -7,9 +7,11 @@ namespace RN.WIA.Selectables
     public class SelectStructure : Selectables
     {
         public Commands.Spawn.PlayerCommands commands;
+        public GameObject spawnLocation = null;
+        
         public override void OnSelect()
         {
-            Commands.Spawn.CommandsManager.instance.SetButtons(commands);
+            Commands.Spawn.CommandsManager.instance.SetButtons(commands, gameObject);
             base.OnSelect();
            
         }

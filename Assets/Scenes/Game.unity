@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 781266927}
   - component: {fileID: 781266926}
   - component: {fileID: 781266928}
+  - component: {fileID: 781266929}
   m_Layer: 5
   m_Name: CommandManager
   m_TagString: Untagged
@@ -860,6 +861,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commandBtn: {fileID: 8702446983206909437, guid: 0061bcd8a609c014fb58c32d57e4b22d, type: 3}
   commandGroup: {fileID: 1121805376}
+  spawnCount: []
+  spawnOrder: []
+  spawnPoint: {fileID: 0}
+--- !u!114 &781266929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781266924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d66514ca57bac42a563fcfeb269e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &795657037
 PrefabInstance:
   m_ObjectHideFlags: 0

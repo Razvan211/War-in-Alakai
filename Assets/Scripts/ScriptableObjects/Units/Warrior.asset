@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   unitName: Warrior Unit
+  cost: 0
   bluePrefab: {fileID: 3025061531001083678, guid: 4c1e91d5a3aca0b4182d6d6e95ac8310, type: 3}
   redPrefab: {fileID: 1236649372690964436, guid: 8c1f7f636d111ce48b65a8e74a924a74, type: 3}
+  spawnImg: {fileID: 6813709090894790802, guid: ab3dde3a86f0fa346a7d984096a1b037, type: 3}
   stats:
     health: 250
     attack: 30

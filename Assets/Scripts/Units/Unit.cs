@@ -17,8 +17,11 @@ namespace RN.WIA.Units
         public unitType type;
         public string unitName;
         public int cost;
+        public float timeToSpawn;
         public GameObject bluePrefab;
         public GameObject redPrefab;
+        public GameObject spawnImg;
+        
 
         [Header("Units Stats")]
         public UnitsStats.Stats stats;
