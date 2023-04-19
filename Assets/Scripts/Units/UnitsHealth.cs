@@ -15,34 +15,23 @@ namespace RN.WIA.Units
         private bool isPlayer = false;
 
         
-        // Start is called before the first frame update
-        void Start()
+        public void SetUnitHealth(UnitsStats.Stats stats, bool playerUnit)
         {
-            try
-            {//gets stats from playerunit script
-                health = gameObject.GetComponentInParent<Player.PlayerUnits>().pUnitStats.health;
-                armor = gameObject.GetComponentInParent<Player.PlayerUnits>().pUnitStats.armor;
-                isPlayer = true;
-            }
-            catch (Exception)
-            {
-                Debug.Log("No player");
-                try
-                {  //gets stats from enemyunit script
-                    health = gameObject.GetComponentInParent<Enemy.EnemyUnits>().eUnitStats.health;
-                    armor = gameObject.GetComponentInParent<Enemy.EnemyUnits>().eUnitStats.armor;
-                    isPlayer = false;
-                }
-                catch (Exception)
-                {
-                Debug.Log("No stats found");
-                }
+            health = stats.health;
+            armor = stats.armor;
 
-            }
+            isPlayer = playerUnit;
             currentHealth = health;
-
         }
 
+        public void SetStructureHealth(Structure.StructureStats.Stats stats, bool playerUnit)
+        {
+            health = stats.health;
+            armor = stats.armor;
+
+            isPlayer = playerUnit;
+            currentHealth = health;
+        }
         // Update is called once per frame
         void Update()
         {
