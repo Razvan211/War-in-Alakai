@@ -15,6 +15,7 @@ MonoBehaviour:
   type: 1
   unitName: Mage Unit
   cost: 0
+  timeToSpawn: 4
   bluePrefab: {fileID: 3467878856677311122, guid: 64941ce3fa71aa744846e36b112fdb00, type: 3}
   redPrefab: {fileID: 2083767008698797507, guid: 6803fa576fd127340b5e938cbdfea779, type: 3}
   spawnImg: {fileID: 6813709090894790802, guid: ab3dde3a86f0fa346a7d984096a1b037, type: 3}

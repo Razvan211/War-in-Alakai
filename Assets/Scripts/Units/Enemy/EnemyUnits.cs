@@ -13,12 +13,15 @@ namespace RN.WIA.Units.Enemy
 
         private Collider[] rangeCollider;
 
-        NavMeshAgent agent;
+        private NavMeshAgent agent;
 
         //target for aggro
         private Transform target;
 
         private UnitsHealth playerUnit;
+        public UnitsHealth unitHealth;
+        public Unit unitType;
+
 
         private bool hasAggro = false;
 
@@ -28,6 +31,8 @@ namespace RN.WIA.Units.Enemy
 
         private void Start()
         {
+            eUnitStats = unitType.stats;
+            unitHealth.SetUnitHealth(eUnitStats, false);
             agent = gameObject.GetComponent<NavMeshAgent>();
         
         }
