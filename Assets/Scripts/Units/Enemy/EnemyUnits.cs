@@ -19,6 +19,7 @@ namespace RN.WIA.Units.Enemy
         private Transform target;
 
         private UnitsHealth playerUnit;
+
         public UnitsHealth unitHealth;
         public Unit unitType;
 

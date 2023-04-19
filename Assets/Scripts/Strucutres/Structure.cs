@@ -25,6 +25,7 @@ namespace RN.WIA.Structure
         public structureType type;
         public structureResources resources;
         public string structureName;
+        public bool isCastle = false;
         public int cost;
         public float timeToSpawn;
         public GameObject bluePrefab;

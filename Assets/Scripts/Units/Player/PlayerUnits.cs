@@ -13,9 +13,12 @@ namespace RN.WIA.Units.Player {
         private NavMeshAgent agent;
 
         public UnitsStats.Stats pUnitStats;
+       
 
         public Unit unitType;
         public UnitsHealth unitHealth;
+        
+
         private void OnEnable()
         {
             pUnitStats = unitType.stats;
@@ -23,7 +26,11 @@ namespace RN.WIA.Units.Player {
             agent = GetComponent<NavMeshAgent>();
         }
 
-       
+        private void Update()
+        {
+      
+        }
+
         public void UnitMovement(Vector3 destination)
         {
             if(agent == null)
@@ -40,7 +47,8 @@ namespace RN.WIA.Units.Player {
 
        
 
-       
+
+
 
     }
 }

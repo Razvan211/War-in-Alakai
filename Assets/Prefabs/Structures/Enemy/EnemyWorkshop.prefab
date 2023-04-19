@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7836642424349834771}
   - component: {fileID: 246962165651198925}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7727187180268853797}
   - component: {fileID: 7890923774710041987}
   - component: {fileID: 6488328017653603475}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyWorkshop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StructureHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 669934695272043974, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065978027718337153, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2512132063403888049, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.011
@@ -198,6 +206,10 @@ PrefabInstance:
     - target: {fileID: 6473260429482313908, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704490053053210448, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8907617840708279378, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_Pivot.x
@@ -352,9 +364,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5870630636663241102, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
       propertyPath: m_Name
       value: RedWorkshop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273194142407487394, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9916a09c4585dc94f9276088f33d45f2, type: 3}

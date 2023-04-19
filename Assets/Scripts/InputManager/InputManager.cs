@@ -25,10 +25,12 @@ namespace RN.WIA.InputManager
 
         private Vector3 mousePosition;
 
-       
+        private Units.UnitsHealth enemyUnit;
 
+        private float attackCd;
         //stores the selected units
         public List<Transform> selectedUnits = new List<Transform>();
+        public Units.UnitsStats.Stats pUnitStats;
         public Transform selectedStrucutre = null;
 
 
@@ -54,6 +56,7 @@ namespace RN.WIA.InputManager
         private void Update()
         {
             LocationOutput();
+            attackCd -= Time.deltaTime;
         }
 
         //draw
@@ -134,6 +137,13 @@ namespace RN.WIA.InputManager
                             
                             break;
                         case 7: //Layer for enemy units
+                           foreach(Transform unit in selectedUnits)
+                            {
+                                PlayerUnits playerUnits = unit.gameObject.GetComponent<PlayerUnits>();
+                                playerUnits.UnitMovement(hit.point);
+                                
+                            }
+                            break;
                         default:
                            
                             foreach (Transform unit in selectedUnits)
