@@ -144,15 +144,10 @@ namespace RN.WIA.Commands.Spawn
         {
             GameObject spawned = Instantiate(spawnOrder[0], new Vector3(spawnPoint.transform.position.x - 4, spawnPoint.transform.position.y,
                 spawnPoint.transform.position.z), Quaternion.identity);
-
-            Units.Player.PlayerUnits playerUnit = spawned.GetComponent<Units.Player.PlayerUnits>();
-            //finds the partent in which the untis will be added based on their type
-            //it adds an s at the end as the units are named Warrior, Mage, Catapult and the parent has the names at plural 
-            playerUnit.transform.SetParent(GameObject.Find("P " + playerUnit.unitType.type.ToString() + "s").transform);
+            spawned.GetComponent<Units.Player.PlayerUnits>().pUnitStats.health = 50;
 
 
-            spawnCount.Remove(spawnCount[0]);
-            spawnOrder.Remove(spawnOrder[0]);
+
         }
     }
 }

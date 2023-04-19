@@ -177,8 +177,6 @@ MonoBehaviour:
     range: 0
     sightRange: 0
     attkSpeed: 0
-  unitType: {fileID: 11400000, guid: e6c148ea9302c3a4f97dbc4009333daa, type: 2}
-  unitHealth: {fileID: 720905877322975946}
 --- !u!114 &1866288501198315474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8621a0a526456409ca1da89a05f0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSelected: 0
+  isSelectable: 0
   selectionCircle: {fileID: 3726910554257340107}
 --- !u!1001 &1361025863856389081
 PrefabInstance:
@@ -296,11 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 669934695272043974, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_Name
-      value: UnitHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473260429482313908, guid: 6ad4ed58185598541928cd078284000b, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: UnitStats
       objectReference: {fileID: 0}
     - target: {fileID: 8907617840708279378, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_Pivot.x
@@ -393,14 +387,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907617840708279378, guid: 6ad4ed58185598541928cd078284000b, type: 3}
   m_PrefabInstance: {fileID: 9221014046791061121}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &720905877322975946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -723193358787443637, guid: 6ad4ed58185598541928cd078284000b, type: 3}
-  m_PrefabInstance: {fileID: 9221014046791061121}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bc53d89c0374e47bc72db3f4bb8f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

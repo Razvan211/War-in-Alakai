@@ -16,7 +16,6 @@ MonoBehaviour:
   resources: 0
   structureName: MageTower
   cost: 300
-  timeToSpawn: 5
   bluePrefab: {fileID: 1519060373363961473, guid: 9f30f249014270147b1b4de7ca714546, type: 3}
   redPrefab: {fileID: 8244484905184678219, guid: f59ce9eaf3d037942ae0b6ace8c41a4e, type: 3}
   spawnImg: {fileID: 6813709090894790802, guid: ab3dde3a86f0fa346a7d984096a1b037, type: 3}

@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 132824176}
   m_Layer: 0
-  m_Name: P Warriors
+  m_Name: Warriors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,7 +1178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003153361}
   m_Layer: 0
-  m_Name: P Mages
+  m_Name: Mages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

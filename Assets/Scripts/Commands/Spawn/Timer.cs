@@ -31,6 +31,8 @@ namespace RN.WIA.Commands.Spawn
 
                 CommandsManager.instance.SpawnObj();
 
+                CommandsManager.instance.spawnCount.Remove(CommandsManager.instance.spawnCount[0]);
+
                 //it starts over if the spawnCount is bigger than 0
                 if(CommandsManager.instance.spawnCount.Count > 0)
                 {
