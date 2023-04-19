@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7539175027598281463}
   - component: {fileID: 8637311308395144403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1102137314311305512}
   - component: {fileID: 3752568631006848229}
   - component: {fileID: 8344892282453762175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMageTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedMageTower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1edd4ab8b9e1a7d4c95f30e81fcd2528, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1edd4ab8b9e1a7d4c95f30e81fcd2528, type: 3}
 --- !u!4 &6522005566189345901 stripped
@@ -224,6 +228,14 @@ PrefabInstance:
     - target: {fileID: 669934695272043974, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_Name
       value: StructureHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 669934695272043974, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065978027718337153, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2512132063403888049, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -260,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 6473260429482313908, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704490053053210448, guid: 6ad4ed58185598541928cd078284000b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8907617840708279378, guid: 6ad4ed58185598541928cd078284000b, type: 3}
       propertyPath: m_Pivot.x

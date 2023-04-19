@@ -1350,6 +1350,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   selectedUnits: []
+  pUnitStats:
+    health: 0
+    attack: 0
+    cost: 0
+    armor: 0
+    range: 0
+    sightRange: 0
+    attkSpeed: 0
   selectedStrucutre: {fileID: 330167842}
 --- !u!114 &1024289284
 MonoBehaviour:
@@ -1948,7 +1956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119426892}
   m_Layer: 0
-  m_Name: Catapults
+  m_Name: P Catapults
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
