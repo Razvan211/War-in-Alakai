@@ -21,6 +21,8 @@ namespace RN.WIA.Commands.Spawn
         //list to store what objects are going to spawn
         public List<GameObject> spawnOrder = new List<GameObject>();
 
+        public List<GameObject> spawnPoints = new List<GameObject>();
+
         //Stores the spawn point
         public GameObject spawnPoint = null;
         private void Awake()
@@ -86,12 +88,16 @@ namespace RN.WIA.Commands.Spawn
                 Units.Unit unit = IsUnit(spawnableObj);
                 spawnCount.Add(unit.timeToSpawn);
                 spawnOrder.Add(unit.bluePrefab);
+                GameObject copySP = spawnPoint;
+                spawnPoints.Add(copySP);
             }
             else if (IsStructure(spawnableObj))
             {
                 Structure.Structure structure = IsStructure(spawnableObj);
                 spawnCount.Add(structure.timeToSpawn);
                 spawnOrder.Add(structure.bluePrefab);
+                GameObject copySP = spawnPoint;
+                spawnPoints.Add(copySP);
             }
             else
             {
@@ -142,8 +148,8 @@ namespace RN.WIA.Commands.Spawn
 
         public void SpawnObj()
         {
-            GameObject spawned = Instantiate(spawnOrder[0], new Vector3(spawnPoint.transform.position.x - 4, spawnPoint.transform.position.y,
-                spawnPoint.transform.position.z), Quaternion.identity);
+            GameObject spawned = Instantiate(spawnOrder[0], new Vector3(spawnPoints[0].transform.position.x - 4, spawnPoints[0].transform.position.y,
+                spawnPoints[0].transform.position.z), Quaternion.identity);
 
             Units.Player.PlayerUnits playerUnit = spawned.GetComponent<Units.Player.PlayerUnits>();
             //finds the partent in which the untis will be added based on their type
@@ -153,6 +159,7 @@ namespace RN.WIA.Commands.Spawn
 
             spawnCount.Remove(spawnCount[0]);
             spawnOrder.Remove(spawnOrder[0]);
+            spawnPoints.Remove(spawnPoints[0]);
         }
     }
 }

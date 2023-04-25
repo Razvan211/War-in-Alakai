@@ -71,7 +71,7 @@ namespace RN.WIA.Units
             }
             else
             {
-                Destroy(gameObject.transform.parent.gameObject.transform);
+                Destroy(gameObject.transform.parent.gameObject);
             }
 
             
