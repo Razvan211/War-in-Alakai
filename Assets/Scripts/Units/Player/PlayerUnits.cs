@@ -17,9 +17,12 @@ namespace RN.WIA.Units.Player {
 
         public Unit unitType;
         public UnitsHealth unitHealth;
+
+        private GameObject target;
+        private float lastAttackTime;
         
 
-        private void OnEnable()
+        private void Start()
         {
             pUnitStats = unitType.stats;
             unitHealth.SetUnitHealth(pUnitStats, true);
@@ -28,7 +31,48 @@ namespace RN.WIA.Units.Player {
 
         private void Update()
         {
-      
+            if (target != null && Vector3.Distance(transform.position, target.transform.position) <= pUnitStats.range)
+            {
+                if (Time.time - lastAttackTime > pUnitStats.attkSpeed)
+                {
+                    RN.WIA.Structure.Enemy.EnemyStructure structure = target.GetComponent<RN.WIA.Structure.Enemy.EnemyStructure>();
+                    RN.WIA.Units.Enemy.EnemyUnits unit = target.GetComponent<RN.WIA.Units.Enemy.EnemyUnits>();
+                    if (structure) structure.structHealth.TakeDamage(pUnitStats.attack);
+                    if (unit) unit.unitHealth.TakeDamage(pUnitStats.attack);
+                    lastAttackTime = Time.time;
+                }
+                agent.isStopped = true;
+            }
+            else if( target != null)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(target.transform.position);
+            }
+            else
+            {
+                agent.isStopped = false;
+            }
+
+        }
+
+        public void SetTarget(GameObject newTarget)
+        {
+            if (target == null && newTarget == null) return;
+            if (newTarget == null)
+            {
+                target = null;
+                return;
+            }
+            target = newTarget;
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+            if(distance > pUnitStats.range)
+            {
+                float adjustedDistance = distance - pUnitStats.range;
+                Vector3 direction = (target.transform.position - transform.position).normalized;
+                Vector3 destination = target.transform.position - direction * adjustedDistance;
+                agent.SetDestination(destination);
+            }
+            transform.LookAt(target.transform.position);
         }
 
         public void UnitMovement(Vector3 destination)
@@ -42,7 +86,6 @@ namespace RN.WIA.Units.Player {
             {
                 agent.SetDestination(destination);
             }
-       
         }
 
        

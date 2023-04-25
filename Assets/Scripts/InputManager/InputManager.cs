@@ -140,8 +140,7 @@ namespace RN.WIA.InputManager
                            foreach(Transform unit in selectedUnits)
                             {
                                 PlayerUnits playerUnits = unit.gameObject.GetComponent<PlayerUnits>();
-                                playerUnits.UnitMovement(hit.point);
-                                
+                                playerUnits.SetTarget(hit.collider.gameObject);
                             }
                             break;
                         default:
@@ -150,6 +149,7 @@ namespace RN.WIA.InputManager
                             {
                                 PlayerUnits playerUnits = unit.gameObject.GetComponent<PlayerUnits>();
                                 playerUnits.UnitMovement(hit.point);
+                                playerUnits.SetTarget(null);
                             }
                             break;
                     }

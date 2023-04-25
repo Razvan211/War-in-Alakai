@@ -30,7 +30,7 @@ namespace RN.WIA.Units.Enemy
 
         private float attackCd;
 
-        private void Start()
+        private void OnEnable()
         {
             eUnitStats = unitType.stats;
             unitHealth.SetUnitHealth(eUnitStats, false);
