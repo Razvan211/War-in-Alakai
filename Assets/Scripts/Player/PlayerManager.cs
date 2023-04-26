@@ -54,9 +54,6 @@ namespace RN.WIA.Player
                     // remove the last letter and make the string lower case
                     string name = child.name.Substring(0, child.name.Length - 1).ToLower();
 
-                   // var stats = Units.UnitManager.instance.GetStats(name);
-
-
                     if (type == playerUnits)
                     {
                         Units.Player.PlayerUnits playerUnit = obj.GetComponent<Units.Player.PlayerUnits>();

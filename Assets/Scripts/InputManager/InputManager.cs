@@ -12,6 +12,7 @@ namespace RN.WIA.InputManager
 
 
         public static InputManager instance;
+        public Transform environment;
 
         public Camera cam;
         public GameObject pointToMove;
@@ -105,19 +106,24 @@ namespace RN.WIA.InputManager
 
             if (Input.GetMouseButtonUp(0))
             {
-                //iterates through PlayerUnits 
-                foreach(Transform units in Player.PlayerManager.instance.playerUnits)
+                foreach (Transform elements in environment)
                 {
-                    //Iterates through the children of PlayerUnits: Warriors/Mages/Catapult
-                    foreach (Transform unit in units)
+                    Debug.Log(elements);
+                    //iterates through PlayerUnits 
+                    foreach (Transform units in Player.PlayerManager.instance.playerUnits)
                     {
-                        if (isInRectangle(unit))
+                        //Iterates through the children of PlayerUnits: Warriors/Mages/Catapult
+                        foreach (Transform unit in units)
                         {
-                            SelectedUnit(unit, true);
+                            if (isInRectangle(unit))
+                            {
+                                SelectedUnit(unit, true);
+                            }
+
                         }
-                        
                     }
                 }
+               
                 drag = false;
             }
 
