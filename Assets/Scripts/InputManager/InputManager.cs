@@ -89,10 +89,12 @@ namespace RN.WIA.InputManager
                 //check if the unit is hit
                 if (Physics.Raycast(ray, out hit, 100, selectableLayer))
                 {
+                    //Debug purposes at the moment
                     if (SelectedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift)))
                     {
-                        
-                    }else if (SelectedStructure(hit.transform))
+                        Debug.Log("Unit selected");
+                    }
+                    else if (SelectedStructure(hit.transform))
                     {
                         Debug.Log("Structure selected");
                     }
@@ -106,15 +108,15 @@ namespace RN.WIA.InputManager
 
             if (Input.GetMouseButtonUp(0))
             {
-                foreach (Transform elements in environment)
-                {
-                    Debug.Log(elements);
+                
                     //iterates through PlayerUnits 
                     foreach (Transform units in Player.PlayerManager.instance.playerUnits)
                     {
+                        Debug.Log(units);
                         //Iterates through the children of PlayerUnits: Warriors/Mages/Catapult
                         foreach (Transform unit in units)
                         {
+                          
                             if (isInRectangle(unit))
                             {
                                 SelectedUnit(unit, true);
@@ -122,7 +124,7 @@ namespace RN.WIA.InputManager
 
                         }
                     }
-                }
+                
                
                 drag = false;
             }
