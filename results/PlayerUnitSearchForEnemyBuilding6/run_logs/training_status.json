@@ -1,0 +1,38 @@
+{
+    "MoveToEnemy": {
+        "checkpoints": [
+            {
+                "steps": 499987,
+                "file_path": "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy\\MoveToEnemy-499987.onnx",
+                "reward": 1.0,
+                "creation_time": 1682696011.4085,
+                "auxillary_file_paths": [
+                    "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy\\MoveToEnemy-499987.pt"
+                ]
+            },
+            {
+                "steps": 500051,
+                "file_path": "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy\\MoveToEnemy-500051.onnx",
+                "reward": 1.0,
+                "creation_time": 1682696011.451036,
+                "auxillary_file_paths": [
+                    "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy\\MoveToEnemy-500051.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500051,
+            "file_path": "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy.onnx",
+            "reward": 1.0,
+            "creation_time": 1682696011.451036,
+            "auxillary_file_paths": [
+                "results\\PlayerUnitSearchForEnemyBuilding6\\MoveToEnemy\\MoveToEnemy-500051.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
