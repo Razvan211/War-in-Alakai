@@ -27,8 +27,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleMovement();
-        HandleZoom();
+        //HandleMovement();
+        //HandleZoom();
     }
 
     private void HandleMovement()

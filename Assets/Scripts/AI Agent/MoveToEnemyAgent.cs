@@ -9,17 +9,19 @@ using Unity.MLAgents.Sensors;
 public class MoveToEnemyAgent : Agent
 {
     [SerializeField] private Transform targetTr;
-    [SerializeField] private NavMeshAgent agent;
-    RaycastHit hit;
+    [SerializeField] private Material green;
+    [SerializeField] private Material red;
+    [SerializeField] private MeshRenderer floor;
+ 
 
     public override void OnEpisodeBegin()
     {
-        agent.transform.position = new Vector3(0, 0, 7.4f);
+        transform.localPosition = new Vector3(0, 0, 7.4f);
     }
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(agent.transform.position);
-        sensor.AddObservation(targetTr.transform.position);
+        sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(targetTr.transform.localPosition);
 
     }
     public override void OnActionReceived(ActionBuffers actions)
@@ -28,13 +30,33 @@ public class MoveToEnemyAgent : Agent
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
 
-        agent.SetDestination(targetTr.position);
+        float moveSpeed = 2f;
+        transform.position += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
+        continuousActions[0] = Input.GetAxisRaw("Horizontal");
+        continuousActions[1] = Input.GetAxisRaw("Vertical");
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        SetReward(1f);
 
-        EndEpisode();
+        if (other.TryGetComponent<EnemyTarget>(out EnemyTarget eTarget))
+        {
+            SetReward(1f);
+            floor.material = green;
+            EndEpisode();
+
+        }
+        if (other.TryGetComponent<Boundary>(out Boundary boundary))
+        {
+            SetReward(-1f);
+            floor.material = red;
+            EndEpisode();
+        }
     }
 }
