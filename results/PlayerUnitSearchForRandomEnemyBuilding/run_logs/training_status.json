@@ -1,0 +1,29 @@
+{
+    "MoveToEnemy": {
+        "checkpoints": [
+            {
+                "steps": 212275,
+                "file_path": "results\\PlayerUnitSearchForRandomEnemyBuilding\\MoveToEnemy\\MoveToEnemy-212275.onnx",
+                "reward": null,
+                "creation_time": 1682702022.1005015,
+                "auxillary_file_paths": [
+                    "results\\PlayerUnitSearchForRandomEnemyBuilding\\MoveToEnemy\\MoveToEnemy-212275.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 212275,
+            "file_path": "results\\PlayerUnitSearchForRandomEnemyBuilding\\MoveToEnemy.onnx",
+            "reward": null,
+            "creation_time": 1682702022.1005015,
+            "auxillary_file_paths": [
+                "results\\PlayerUnitSearchForRandomEnemyBuilding\\MoveToEnemy\\MoveToEnemy-212275.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

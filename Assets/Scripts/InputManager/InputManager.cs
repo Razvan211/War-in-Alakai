@@ -12,6 +12,7 @@ namespace RN.WIA.InputManager
 
 
         public static InputManager instance;
+        public Transform environment;
 
         public Camera cam;
         public GameObject pointToMove;
@@ -88,10 +89,12 @@ namespace RN.WIA.InputManager
                 //check if the unit is hit
                 if (Physics.Raycast(ray, out hit, 100, selectableLayer))
                 {
+                    //Debug purposes at the moment
                     if (SelectedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift)))
                     {
-                        
-                    }else if (SelectedStructure(hit.transform))
+                        Debug.Log("Unit selected");
+                    }
+                    else if (SelectedStructure(hit.transform))
                     {
                         Debug.Log("Structure selected");
                     }
@@ -105,19 +108,24 @@ namespace RN.WIA.InputManager
 
             if (Input.GetMouseButtonUp(0))
             {
-                //iterates through PlayerUnits 
-                foreach(Transform units in Player.PlayerManager.instance.playerUnits)
-                {
-                    //Iterates through the children of PlayerUnits: Warriors/Mages/Catapult
-                    foreach (Transform unit in units)
+                
+                    //iterates through PlayerUnits 
+                    foreach (Transform units in Player.PlayerManager.instance.playerUnits)
                     {
-                        if (isInRectangle(unit))
+                        Debug.Log(units);
+                        //Iterates through the children of PlayerUnits: Warriors/Mages/Catapult
+                        foreach (Transform unit in units)
                         {
-                            SelectedUnit(unit, true);
+                          
+                            if (isInRectangle(unit))
+                            {
+                                SelectedUnit(unit, true);
+                            }
+
                         }
-                        
                     }
-                }
+                
+               
                 drag = false;
             }
 
