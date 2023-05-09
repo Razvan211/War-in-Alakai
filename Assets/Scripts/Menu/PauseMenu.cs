@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace RN.WIA.Menu
-{
+{//handles pause menu functions
     public class PauseMenu : MonoBehaviour
     {
         public static bool gameIsPaused = false;
@@ -13,7 +13,7 @@ namespace RN.WIA.Menu
 
         public GameObject pauseMenuUI;
         public GameObject gameUI;
-        // Update is called once per frame
+      
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))

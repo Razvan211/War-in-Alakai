@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-
+//handles the economy (not implemented at the moment)
 namespace RN.WIA.GameManager
 {
     public class GameManager : MonoBehaviour

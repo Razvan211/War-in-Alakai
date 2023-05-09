@@ -200,6 +200,8 @@ namespace RN.WIA.InputManager
 
         private void LocationOutput()
         {
+
+            //adds the x to the mouse position
             if (Input.GetMouseButtonDown(1))
             {
                 RaycastHit hit;

@@ -31,6 +31,7 @@ namespace RN.WIA.Units.Player {
 
         private void Update()
         {
+            //handles the attack logic
             if (target != null && Vector3.Distance(transform.position, target.transform.position) <= pUnitStats.range)
             {
                 if (Time.time - lastAttackTime > pUnitStats.attkSpeed)
@@ -55,6 +56,7 @@ namespace RN.WIA.Units.Player {
 
         }
 
+        //sets the target to attack
         public void SetTarget(GameObject newTarget)
         {
             if (target == null && newTarget == null) return;
@@ -75,6 +77,7 @@ namespace RN.WIA.Units.Player {
             transform.LookAt(target.transform.position);
         }
 
+        //handles movement
         public void UnitMovement(Vector3 destination)
         {
             if(agent == null)

@@ -28,7 +28,7 @@ namespace RN.WIA.Units
             DontDestroyOnLoad(gameObject);
         }
 
-
+        //gets the stats based on the unit type
         public UnitsStats.Stats GetStats(string unitType)
         {
             Unit unit;

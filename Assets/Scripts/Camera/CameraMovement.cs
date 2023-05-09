@@ -19,10 +19,6 @@ public class CameraMovement : MonoBehaviour
     
 
     private Vector3 dragStartPosition;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         HandleZoom();
     }
 
+    //Handles Movement
     private void HandleMovement()
     {
         float x = Input.GetAxis("Horizontal");
@@ -47,6 +44,7 @@ public class CameraMovement : MonoBehaviour
             transform.position += difference * moveSpeed * Time.deltaTime;
             dragStartPosition = dragCurrentPosition;
         }
+        //Boundaries
             if(transform.position.x > xMargin )
             {
                 transform.position = new Vector3(xMargin, transform.position.y, transform.position.z);

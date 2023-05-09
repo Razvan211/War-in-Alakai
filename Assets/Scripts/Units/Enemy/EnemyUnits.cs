@@ -11,6 +11,7 @@ namespace RN.WIA.Units.Enemy
     {
         public UnitsStats.Stats eUnitStats;
 
+        //used for finding the player units
         private Collider[] rangeCollider;
 
         private NavMeshAgent agent;
@@ -23,11 +24,12 @@ namespace RN.WIA.Units.Enemy
         public UnitsHealth unitHealth;
         public Unit unitType;
 
-
+        
         private bool hasAggro = false;
 
         private float distance;
 
+        //cooldown
         private float attackCd;
 
         private void OnEnable()
@@ -66,6 +68,7 @@ namespace RN.WIA.Units.Enemy
             }
         }
 
+        // handles movement
         private void MoveToEnemy()
         {
             if (target == null)
@@ -87,6 +90,7 @@ namespace RN.WIA.Units.Enemy
         }
 
 
+        //handles attack
         private void Attack()
         {
             if(attackCd <= 0 && distance <= eUnitStats.range + 1)

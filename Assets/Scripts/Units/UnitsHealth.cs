@@ -52,8 +52,9 @@ namespace RN.WIA.Units
             //rotates healthbars to look at the camera
             gameObject.transform.LookAt(gameObject.transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
 
+            //handles the healthbar 
             healthAmount.fillAmount = currentHealth / health;
-
+           
             if (currentHealth <= 0)
             {
 

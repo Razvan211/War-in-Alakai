@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 namespace RN.WIA.Units
-{
+{//stores unit properties
     [CreateAssetMenu(fileName = "New Unit", menuName = "Create Spawnables/Create Unit")]
     public class Unit : ScriptableObject
     {

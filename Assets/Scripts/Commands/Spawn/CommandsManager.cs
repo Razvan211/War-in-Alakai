@@ -9,6 +9,7 @@ namespace RN.WIA.Commands.Spawn
     {
         public static CommandsManager instance = null;
 
+        
         [SerializeField] private Button commandBtn = null;
         [SerializeField] private Transform commandGroup = null;
 
@@ -16,11 +17,13 @@ namespace RN.WIA.Commands.Spawn
 
         private PlayerCommands commandsList = null;
 
-        //list for how many units are in queue
+        //list for time count
         public List<float> spawnCount = new List<float>();
-        //list to store what objects are going to spawn
+
+        //list to store what units are going to spawn
         public List<GameObject> spawnOrder = new List<GameObject>();
 
+        //stores strucutres spawn points
         public List<GameObject> spawnPoints = new List<GameObject>();
 
         //Stores the spawn point
@@ -83,6 +86,7 @@ namespace RN.WIA.Commands.Spawn
 
         public void BeginSpawnTimer(string spawnableObj)
         {
+            //sets the needed values to spawn a unit
             if (IsUnit(spawnableObj))
             {
                 Units.Unit unit = IsUnit(spawnableObj);
@@ -91,6 +95,7 @@ namespace RN.WIA.Commands.Spawn
                 GameObject copySP = spawnPoint;
                 spawnPoints.Add(copySP);
             }
+            //sets the needed values to spawn a structure (not implemented yet)
             else if (IsStructure(spawnableObj))
             {
                 Structure.Structure structure = IsStructure(spawnableObj);
@@ -104,10 +109,12 @@ namespace RN.WIA.Commands.Spawn
                 Debug.Log($"{spawnableObj} cannot be spawned!");
             }
 
+            //starts timer
             if(spawnOrder.Count == 1)
             {
                 Timer.instance.StartCoroutine(Timer.instance.SpawnTime());
             }
+            //stops timer
             else if(spawnOrder.Count == 0)
             {
                 Timer.instance.StopAllCoroutines();

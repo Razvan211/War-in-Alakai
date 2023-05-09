@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RN.WIA.Units
 {
     
-
+    //stores the stats for units
     public class UnitsStats : ScriptableObject
     {
         [System.Serializable]
