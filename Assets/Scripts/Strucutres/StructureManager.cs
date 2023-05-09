@@ -28,6 +28,7 @@ namespace RN.WIA.Structure
             }
 
 
+        //gets stats for the strucutres based on the type of the structure
             public StructureStats.Stats GetStats(string type)
             {
                 Structure structure;
